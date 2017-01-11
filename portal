@@ -1,0 +1,17 @@
+#! /usr/bin/env php
+
+<?php
+
+use Symfony\Component\Console\Application;
+use Portal\RunFormatterCommand;
+use Portal\ArrayFormatter;
+
+require 'vendor/autoload.php';
+
+$app = new Application('The Portal Test', '1.0');
+
+$arrayFormatter = new ArrayFormatter();
+
+$app->add(new RunFormatterCommand($arrayFormatter));
+
+$app->run();
