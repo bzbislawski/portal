@@ -5,6 +5,7 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Exception;
 
 class RunFormatterCommand extends Command
 {
@@ -40,7 +41,7 @@ class RunFormatterCommand extends Command
     {
         $fileName = $input->getArgument('name');
         if( ! file_exists($fileName)) {
-            throw new \Exception('File does not exists!');
+            throw new Exception("File does not exists!");
         }
 
         $this->arrayFormatter->readFile($fileName);
