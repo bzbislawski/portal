@@ -33,8 +33,9 @@ class ArrayFormatter
      */
     public function sumDuplicatedEntries()
     {
-        for ($i = 0; $i < count($this->workSheetArray); $i += 1) {
-            for ($j = $i + 1; $j < count($this->workSheetArray); $j += 1) {
+        $arraySize = count($this->workSheetArray);
+        for ($i = 0; $i < $arraySize; $i += 1) {
+            for ($j = $i + 1; $j < $arraySize; $j += 1) {
                 if ($this->workSheetArray[$i][0] == $this->workSheetArray[$j][0]) {
                     $this->workSheetArray[$j][1] += $this->workSheetArray[$i][1];
                     unset($this->workSheetArray[$i]);
