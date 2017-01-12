@@ -1,4 +1,6 @@
 {
+	"name": "bzbislawski/portal",
+	"description": "A small package for formatting csv files",
 	"require": {
 		"symfony/console": "~2.0"
 	},
